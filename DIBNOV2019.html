@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Data Is Beautiful November 2019</title>
+		<script type="text/javascript" src="www/d3.js"></script>
+	    <link rel="stylesheet" href="www/style.css" type="text/css">
+	</head>
+	
+	<body>
+		<header>
+			<h2>Top 3x3 Solve Times By State</h2>
+		</header>
+		<section class="wrapper">
+			<div id="plotwrap">
+				<div id="plot"></div>
+				<div id="rButtons">
+					<input type="radio" name="timeType" value="avg" checked="true"> Average
+					<input type="radio" name="timeType" value="best"> Best
+				</div>
+			</div>
+			<div id="table">
+				<div id="hideText">
+					Hover over a state to see the top 3 times by:
+					
+					<ul>
+						<li><strong>Average</strong> (default) of an individual's final round times.</li>
+						<li><strong>Best</strong> overall time for a individual's final round</li>
+					</ul>
+					
+					<p>States are colored by their top ranked time (lighter colors indicating faster times).</p>
+				</div>
+				<div id="missExplain" class="hidden">No Available Competition Data</div>
+				<table class="hidden">
+					<tr>
+						<th id="tableTitleAll" colspan="3"><span id="titleState"></span> Top 3 Times (<span id="tableTitle">Average</span>)</th>
+					</tr>
+					<tr>
+						<th width="15%">Rank</th>
+						<th width="55%">Competition</th>
+						<th width="25%">Time (Seconds)</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td id="name1">-</td>
+						<td id="sec1">-</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td id="name2">-</td>
+						<td id="sec2">-</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td id="name3">-</td>
+						<td id="sec3">-</td>
+					<tr>
+				</table>
+			</div>
+		</section>
+		<footer>
+			<p>This information is based on competition results owned and maintained by the World Cube Assocation, published at https://worldcubeassociation.org/results as of November 12, 2019.</p>
+			<p><a href="https://www.slacey.net">Return Home</a></p> 
+		</footer>
+
+		<script type="text/javascript" src="www/map.js"></script>
+	</body>
+</html>
