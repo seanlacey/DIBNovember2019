@@ -26,4 +26,20 @@ and interesting way to present a subset of the data, while also allowing me to b
 in the book (I wasn't quite ready to release the training wheels!). 
 
 Having chosen to make an interactive choropleth, I decided to limit the scope of the visualization to
-just competitions in the United States, and, further, to only the finals of 3x3 cube events. 
+just competitions in the United States, and, further, to only 3x3 cube events.
+
+In the "rCode" folder you can find my code (data_wrangle.R) that was used to generate the JSON dataset (www/data/us_avg_best.json). The code references only two files from the WCA data (not included in this repository, sorry!). They are the competitions dataset (WCA_export_Competitions.tsv) and the results dataset (WCA_export_Results.tsv).
+
+There were two issues that I encounted while messing with the data.
+
+1. When specifying encoding, R prefers the use of the "encoding" option instead of the "fileEncoding". Not 100% sure why.
+2. The competitions file contained double quotes, which R, by default, tries to use to determine variables. I had to use the quote="" option to have R ignore those.
+
+## Creating the visualization
+
+Like I said, I specifically chose to do a Choropleth because I had just done an example of one and felt like it would be a good continuation. I further wanted to mess around with various interactive elements. If you've read Interactive Data Visualization for the Web, you'll probably recognize several places where I used examples from the book and updated to suit the needs of the visualization.
+
+## Acknowledgements
+
+1. [Interactive Data Visualization for the Web](https://alignedleft.com/work/d3-book): If you can't tell, I really loved this book. It is extremely well written and has great examples to follow along with.
+2. [Codecademy](https://www.codecademy.com/): I'm deep into the Web Development track and owe it a lot, especially in teaching me how Javascript, HTML, and CSS work together to create interactivity. 
