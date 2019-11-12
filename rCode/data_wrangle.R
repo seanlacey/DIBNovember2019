@@ -11,9 +11,9 @@ comp.vec <- comps1$id
 results1 <- as_tibble(read.delim("C:/projects/DIB NOV2019/WCA_export_Results.tsv",
                                  sep="\t",encoding="UTF-8",stringsAsFactors=FALSE,quote="")) %>% 
   filter(competitionId %in% comp.vec & 
-         eventId == 333 &
-         roundTypeId %in% c("f","c") &
-         pos == 1)
+         eventId == 333) %>% 
+  mutate(best = ifelse(best>0,best,NA),
+         average = ifelse(average>0,average,NA))
 
 combo1 <- inner_join(results1,comps1,by=c("competitionId" = "id")) %>% 
   mutate(avgSeconds = average / 100,
@@ -59,5 +59,3 @@ name <- finalCombo1 %>%
 finalCombo2 <- inner_join(seconds,name,by=c("state"))
 
 write_json(finalCombo2,"C:/projects/DIB NOV2019/us_avg_best.json",pretty=TRUE)
-
-min(average$avgSeconds)
