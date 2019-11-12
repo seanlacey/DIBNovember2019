@@ -20,6 +20,9 @@ let path = d3.geoPath()
 //Center of Country (Roughly);
 const center = projection([-97.0, 39.0]);
 	 
+//Define format for seconds;
+const f = d3.format(".2f");
+
 //Initialize Variables;
 let usdata;
 let radioVal="avg";
@@ -184,21 +187,21 @@ d3.json("www/data/us-states.json").then(function(json){
 						.text(Name1);
 						
 					d3.select("#sec1")
-						.text(Sec1);
+						.text(f(Sec1));
 						
 					//Update Row 1;
 					d3.select("#name2")
 						.text(Name2);
 						
 					d3.select("#sec2")
-						.text(Sec2);
+						.text(f(Sec2));
 						
 					//Update Row 1;
 					d3.select("#name3")
 						.text(Name3);
 						
 					d3.select("#sec3")
-						.text(Sec3);
+						.text(f(Sec3));
 						
 					//Update State Name;
 					d3.select("#titleState")
